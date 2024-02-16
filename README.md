@@ -1,6 +1,8 @@
 # WatchOS Alarm
 
 ### Features
+- [x] Set single alarm
+- [ ] Set multiple alarm
 - [x] Show alert visual
 - [ ] Show alert audio
 - [ ] Show alert vibration
