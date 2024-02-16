@@ -1,5 +1,12 @@
 # WatchOS Alarm
 
+### Features
+- [x] Show alert visual
+- [ ] Show alert audio
+- [ ] Show alert vibration
+- [ ] Get timer data
+- [ ] Multiple alert
+
 ### Specification
 - Apple Watch Series 5 (44mm)
 
