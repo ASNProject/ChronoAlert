@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD461ED42B7F013E00AA23CE /* ChronoAlert Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FD461ED32B7F013E00AA23CE /* ChronoAlert Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FD461ED92B7F013E00AA23CE /* ChronoAlertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461ED82B7F013E00AA23CE /* ChronoAlertApp.swift */; };
+		FD461EDB2B7F013E00AA23CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461EDA2B7F013E00AA23CE /* ContentView.swift */; };
+		FD461EDD2B7F014000AA23CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD461EDC2B7F014000AA23CE /* Assets.xcassets */; };
+		FD461EE02B7F014000AA23CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD461EDF2B7F014000AA23CE /* Preview Assets.xcassets */; };
+		FD461EEA2B7F014100AA23CE /* ChronoAlert_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461EE92B7F014100AA23CE /* ChronoAlert_Watch_AppTests.swift */; };
+		FD461EF42B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461EF32B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift */; };
+		FD461EF62B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461EF52B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD461ED52B7F013E00AA23CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD461EC72B7F013E00AA23CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD461ED22B7F013E00AA23CE;
+			remoteInfo = "ChronoAlert Watch App";
+		};
+		FD461EE62B7F014100AA23CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD461EC72B7F013E00AA23CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD461ED22B7F013E00AA23CE;
+			remoteInfo = "ChronoAlert Watch App";
+		};
+		FD461EF02B7F014100AA23CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD461EC72B7F013E00AA23CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD461ED22B7F013E00AA23CE;
+			remoteInfo = "ChronoAlert Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD461EFC2B7F014100AA23CE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FD461ED42B7F013E00AA23CE /* ChronoAlert Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FD461ECD2B7F013E00AA23CE /* ChronoAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChronoAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD461ED32B7F013E00AA23CE /* ChronoAlert Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChronoAlert Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD461ED82B7F013E00AA23CE /* ChronoAlertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoAlertApp.swift; sourceTree = "<group>"; };
+		FD461EDA2B7F013E00AA23CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FD461EDC2B7F014000AA23CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD461EDF2B7F014000AA23CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD461EE52B7F014100AA23CE /* ChronoAlert Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChronoAlert Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD461EE92B7F014100AA23CE /* ChronoAlert_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoAlert_Watch_AppTests.swift; sourceTree = "<group>"; };
+		FD461EEF2B7F014100AA23CE /* ChronoAlert Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChronoAlert Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD461EF32B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoAlert_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		FD461EF52B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoAlert_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD461ED02B7F013E00AA23CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD461EE22B7F014100AA23CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD461EEC2B7F014100AA23CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD461EC62B7F013E00AA23CE = {
+			isa = PBXGroup;
+			children = (
+				FD461ED72B7F013E00AA23CE /* ChronoAlert Watch App */,
+				FD461EE82B7F014100AA23CE /* ChronoAlert Watch AppTests */,
+				FD461EF22B7F014100AA23CE /* ChronoAlert Watch AppUITests */,
+				FD461ECE2B7F013E00AA23CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD461ECE2B7F013E00AA23CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD461ECD2B7F013E00AA23CE /* ChronoAlert.app */,
+				FD461ED32B7F013E00AA23CE /* ChronoAlert Watch App.app */,
+				FD461EE52B7F014100AA23CE /* ChronoAlert Watch AppTests.xctest */,
+				FD461EEF2B7F014100AA23CE /* ChronoAlert Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD461ED72B7F013E00AA23CE /* ChronoAlert Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				FD461ED82B7F013E00AA23CE /* ChronoAlertApp.swift */,
+				FD461EDA2B7F013E00AA23CE /* ContentView.swift */,
+				FD461EDC2B7F014000AA23CE /* Assets.xcassets */,
+				FD461EDE2B7F014000AA23CE /* Preview Content */,
+			);
+			path = "ChronoAlert Watch App";
+			sourceTree = "<group>";
+		};
+		FD461EDE2B7F014000AA23CE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FD461EDF2B7F014000AA23CE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD461EE82B7F014100AA23CE /* ChronoAlert Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD461EE92B7F014100AA23CE /* ChronoAlert_Watch_AppTests.swift */,
+			);
+			path = "ChronoAlert Watch AppTests";
+			sourceTree = "<group>";
+		};
+		FD461EF22B7F014100AA23CE /* ChronoAlert Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD461EF32B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift */,
+				FD461EF52B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "ChronoAlert Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD461ECC2B7F013E00AA23CE /* ChronoAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD461EFD2B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert" */;
+			buildPhases = (
+				FD461ECB2B7F013E00AA23CE /* Resources */,
+				FD461EFC2B7F014100AA23CE /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD461ED62B7F013E00AA23CE /* PBXTargetDependency */,
+			);
+			name = ChronoAlert;
+			productName = ChronoAlert;
+			productReference = FD461ECD2B7F013E00AA23CE /* ChronoAlert.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		FD461ED22B7F013E00AA23CE /* ChronoAlert Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD461EF92B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert Watch App" */;
+			buildPhases = (
+				FD461ECF2B7F013E00AA23CE /* Sources */,
+				FD461ED02B7F013E00AA23CE /* Frameworks */,
+				FD461ED12B7F013E00AA23CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ChronoAlert Watch App";
+			productName = "ChronoAlert Watch App";
+			productReference = FD461ED32B7F013E00AA23CE /* ChronoAlert Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD461EE42B7F014100AA23CE /* ChronoAlert Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD461F002B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert Watch AppTests" */;
+			buildPhases = (
+				FD461EE12B7F014100AA23CE /* Sources */,
+				FD461EE22B7F014100AA23CE /* Frameworks */,
+				FD461EE32B7F014100AA23CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD461EE72B7F014100AA23CE /* PBXTargetDependency */,
+			);
+			name = "ChronoAlert Watch AppTests";
+			productName = "ChronoAlert Watch AppTests";
+			productReference = FD461EE52B7F014100AA23CE /* ChronoAlert Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD461EEE2B7F014100AA23CE /* ChronoAlert Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD461F032B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert Watch AppUITests" */;
+			buildPhases = (
+				FD461EEB2B7F014100AA23CE /* Sources */,
+				FD461EEC2B7F014100AA23CE /* Frameworks */,
+				FD461EED2B7F014100AA23CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD461EF12B7F014100AA23CE /* PBXTargetDependency */,
+			);
+			name = "ChronoAlert Watch AppUITests";
+			productName = "ChronoAlert Watch AppUITests";
+			productReference = FD461EEF2B7F014100AA23CE /* ChronoAlert Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD461EC72B7F013E00AA23CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					FD461ECC2B7F013E00AA23CE = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					FD461ED22B7F013E00AA23CE = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					FD461EE42B7F014100AA23CE = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = FD461ED22B7F013E00AA23CE;
+					};
+					FD461EEE2B7F014100AA23CE = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = FD461ED22B7F013E00AA23CE;
+					};
+				};
+			};
+			buildConfigurationList = FD461ECA2B7F013E00AA23CE /* Build configuration list for PBXProject "ChronoAlert" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD461EC62B7F013E00AA23CE;
+			productRefGroup = FD461ECE2B7F013E00AA23CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD461ECC2B7F013E00AA23CE /* ChronoAlert */,
+				FD461ED22B7F013E00AA23CE /* ChronoAlert Watch App */,
+				FD461EE42B7F014100AA23CE /* ChronoAlert Watch AppTests */,
+				FD461EEE2B7F014100AA23CE /* ChronoAlert Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD461ECB2B7F013E00AA23CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD461ED12B7F013E00AA23CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD461EE02B7F014000AA23CE /* Preview Assets.xcassets in Resources */,
+				FD461EDD2B7F014000AA23CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD461EE32B7F014100AA23CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD461EED2B7F014100AA23CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD461ECF2B7F013E00AA23CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD461EDB2B7F013E00AA23CE /* ContentView.swift in Sources */,
+				FD461ED92B7F013E00AA23CE /* ChronoAlertApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD461EE12B7F014100AA23CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD461EEA2B7F014100AA23CE /* ChronoAlert_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD461EEB2B7F014100AA23CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD461EF62B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift in Sources */,
+				FD461EF42B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD461ED62B7F013E00AA23CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD461ED22B7F013E00AA23CE /* ChronoAlert Watch App */;
+			targetProxy = FD461ED52B7F013E00AA23CE /* PBXContainerItemProxy */;
+		};
+		FD461EE72B7F014100AA23CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD461ED22B7F013E00AA23CE /* ChronoAlert Watch App */;
+			targetProxy = FD461EE62B7F014100AA23CE /* PBXContainerItemProxy */;
+		};
+		FD461EF12B7F014100AA23CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD461ED22B7F013E00AA23CE /* ChronoAlert Watch App */;
+			targetProxy = FD461EF02B7F014100AA23CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FD461EF72B7F014100AA23CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD461EF82B7F014100AA23CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FD461EFA2B7F014100AA23CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChronoAlert Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ChronoAlert;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ASNProject.ChronoAlert.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		FD461EFB2B7F014100AA23CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChronoAlert Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ChronoAlert;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ASNProject.ChronoAlert.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		FD461EFE2B7F014100AA23CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				INFOPLIST_KEY_CFBundleDisplayName = ChronoAlert;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ASNProject.ChronoAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FD461EFF2B7F014100AA23CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				INFOPLIST_KEY_CFBundleDisplayName = ChronoAlert;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ASNProject.ChronoAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD461F012B7F014100AA23CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ASNProject.ChronoAlert-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChronoAlert Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChronoAlert Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		FD461F022B7F014100AA23CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ASNProject.ChronoAlert-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChronoAlert Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChronoAlert Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		FD461F042B7F014100AA23CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ASNProject.ChronoAlert-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ChronoAlert Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		FD461F052B7F014100AA23CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGG73R7JP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ASNProject.ChronoAlert-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "ChronoAlert Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD461ECA2B7F013E00AA23CE /* Build configuration list for PBXProject "ChronoAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD461EF72B7F014100AA23CE /* Debug */,
+				FD461EF82B7F014100AA23CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD461EF92B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD461EFA2B7F014100AA23CE /* Debug */,
+				FD461EFB2B7F014100AA23CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD461EFD2B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD461EFE2B7F014100AA23CE /* Debug */,
+				FD461EFF2B7F014100AA23CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD461F002B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD461F012B7F014100AA23CE /* Debug */,
+				FD461F022B7F014100AA23CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD461F032B7F014100AA23CE /* Build configuration list for PBXNativeTarget "ChronoAlert Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD461F042B7F014100AA23CE /* Debug */,
+				FD461F052B7F014100AA23CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD461EC72B7F013E00AA23CE /* Project object */;
+}
