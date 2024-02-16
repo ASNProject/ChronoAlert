@@ -8,17 +8,141 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentTime = Date()
+    @State private var showingAlarmSheet = false
+    @State private var alarmHour = 0
+    @State private var alarmMinute = 0
+    @State private var alarmSecond = 0
+    @State private var showAlert = false
+    @State private var alertShow = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
+        VStack(spacing: 0) {
+            Text(getCurrentTime())
+                .font(.largeTitle)
+                .padding()
+            
+            Spacer()
+            
             Text("Hello, world!")
+            
+            Spacer()
+            
+            HStack {
+                Button(action: {
+                    showingAlarmSheet = true
+                }) {
+                    Text("Set Alarm")
+                        .font(.custom("Arial", size: 10))
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                .frame(width: 100)
+                .sheet(isPresented: $showingAlarmSheet){
+                    alarmInputView(alarmHour: $alarmHour, alarmMinute: $alarmMinute, alarmSecond: $alarmSecond)
+                }
+                
+                Button(action: {
+                    print("Button 2 Tapped")
+                }) {
+                    Text("Get Data")
+                        .font(.custom("Arial", size: 10))
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                .frame(width: 100)
+            }
+            ///Line Terakhir
         }
-        .padding()
+        .padding(.top, 16)
+        .buttonStyle(BorderlessButtonStyle())
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+            self.currentTime = Date()
+            self.checkAlarm()
+        }
+        .alert(isPresented: $showAlert){
+            Alert(title: Text("Alarm"), message: Text("Waktu alarm telah tercapai!"), dismissButton: .default(Text("OK")){
+            })
+        }
+
+    }
+    
+    func getCurrentTime() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: currentTime)
+    }
+    
+    func checkAlarm() {
+        let calendar = Calendar.current
+        let currentHour = calendar.component(.hour, from: currentTime)
+        let currentMinute = calendar.component(.minute, from: currentTime)
+        let currentSecond = calendar.component(.second, from: currentTime)
+        
+        if currentHour == alarmHour && currentMinute == alarmMinute && currentSecond == alarmSecond {
+            showAlert = true
+        }
     }
 }
 
-#Preview {
-    ContentView()
+struct alarmInputView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var alarmHour: Int
+    @Binding var alarmMinute: Int
+    @Binding var alarmSecond: Int
+    @State private var secondText = "01"
+    
+    var body: some View {
+        VStack {
+            Text("Set Alarm")
+                .font(.custom("Arial", size: 14))
+                .padding()
+            
+            Picker(selection: $alarmHour, label: Text("Hour")){
+                ForEach(0..<24) { hour in
+                    Text("\(hour)")
+                }
+            }
+            .pickerStyle(WheelPickerStyle())
+            .labelsHidden()
+            .frame(width: 100)
+            
+            Picker(selection: $alarmMinute, label: Text("Minute")) {
+                ForEach(0..<60) { minute in
+                    Text("\(minute)")
+                }
+            }
+            .pickerStyle(WheelPickerStyle())
+            .labelsHidden()
+            .frame(width: 100)
+            
+            Button(action: {
+                if let second = Int(secondText){
+                    alarmSecond = second
+                }
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("Save")
+                    .font(.custom("Arial", size: 12))
+                    .padding()
+                    .foregroundColor(.primary)
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+            .frame(width: .infinity)
+        }
+        .padding()
+        .buttonStyle(BorderlessButtonStyle())
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
