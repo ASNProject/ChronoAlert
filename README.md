@@ -19,7 +19,9 @@
 - Set Alarm<br/>
 ![Screenshot 2024-02-16 at 16 58 49](https://github.com/ASNProject/ChronoAlert/assets/49858542/7cc69d74-dd8c-4e2e-8fca-010554d4f7af)<br/>
 - Alert<br/>
-![Screenshot 2024-02-16 at 16 59 07](https://github.com/ASNProject/ChronoAlert/assets/49858542/1acec3bb-d224-470b-b4ac-247b142f670c)
+![Screenshot 2024-02-16 at 16 59 07](https://github.com/ASNProject/ChronoAlert/assets/49858542/1acec3bb-d224-470b-b4ac-247b142f670c)<br/>
+- Get data milliseconds<br/>
+![Screenshot 2024-02-19 at 09 03 17](https://github.com/ASNProject/ChronoAlert/assets/49858542/db64d989-032b-456a-9c6d-7ec1dea3d393)
 
 
 
