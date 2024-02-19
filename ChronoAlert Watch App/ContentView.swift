@@ -68,12 +68,12 @@ struct ContentView: View {
             self.checkAlarm()
         }
         .alert(isPresented: $showAlert){
-            Alert(title: Text("Alarm"), message: Text("Waktu alarm telah tercapai!"), primaryButton: .default(Text("OK")){
+            Alert(title: Text("Alarm!"), message: Text("Waktu alarm telah tercapai!"), dismissButton: .default(Text("OK")){
                 if let startTime = startTime {
                     let endTime = Date()
                     coutingResult = endTime.timeIntervalSince(startTime)
                 }
-            }, secondaryButton: .cancel())
+            })
         }
 
     }
