@@ -6,7 +6,8 @@
 - [x] Show alert visual
 - [ ] Show alert audio
 - [ ] Show alert vibration
-- [ ] Get timer data
+- [x] Get timer data
+- [ ] Get multiple data
 - [ ] Multiple alert
 
 ### Specification
