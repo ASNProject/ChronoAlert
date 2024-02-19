@@ -24,7 +24,7 @@
 ![Screenshot 2024-02-16 at 16 59 07](https://github.com/ASNProject/ChronoAlert/assets/49858542/1acec3bb-d224-470b-b4ac-247b142f670c)<br/>
 - Get data milliseconds<br/>
 ![Screenshot 2024-02-19 at 09 03 17](https://github.com/ASNProject/ChronoAlert/assets/49858542/db64d989-032b-456a-9c6d-7ec1dea3d393)<br/>
-- Multiple get data
+- Multiple get data<br/>
 ![Screenshot 2024-02-19 at 13 08 02](https://github.com/ASNProject/aplikasi_running/assets/49858542/e15a465b-5e3c-47af-b5fa-56a5f7ddc08a)
 
 
