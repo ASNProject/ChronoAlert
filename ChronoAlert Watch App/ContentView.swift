@@ -51,8 +51,7 @@ struct ContentView: View {
                 }
                 .frame(width: 100)
                 .sheet(isPresented: $showingAlarmSheet){
-//                    alarmInputView(alarmHour: $alarmHour, alarmMinute: $alarmMinute, alarmSecond: $alarmSecond)
-                    alarmInputView(setAlarm: addAlarm, alarms: $alarms)
+                    alarmInputView(setAlarm: addAlarm, alarms: $alarms, countingResults: $countingResult)
                 }
                 
                 
@@ -88,7 +87,7 @@ struct ContentView: View {
                     countingResult.append(timeDifference)
                     self.startTime = nil
                 }
-                showAlert = false // Setelah tombol "OK" ditekan, tutup alert
+                showAlert = false
             })
         }
 
@@ -115,7 +114,7 @@ struct ContentView: View {
             if currentHour == alarm.hour && currentMinute == alarm.minute && currentSecond == alarm.second {
                 showAlert = true
                 alertMessage = "Alarm \(alarm.hour):\(alarm.minute):\(alarm.second) telah tercapai!"
-                startTime = Date() // Setel ulang startTime saat alarm muncul
+                startTime = Date()
             }
         }
         
@@ -124,18 +123,15 @@ struct ContentView: View {
             let calendar = Calendar.current
             let secondsDifference = calendar.dateComponents([.second], from: startTime, to: endTime).second ?? 0
 
-            // Periksa apakah ada alarm yang harus dihitung
             if countingResult.isEmpty || countingResult.last != 0 {
                 countingResult.append(0)
             }
 
-            // Perbarui hasil perhitungan
             countingResult[countingResult.count - 1] += Double(secondsDifference)
 
-            self.startTime = nil // Hentikan waktu saat tombol "OK" ditekan
+            self.startTime = nil
         }
     }
-
 
 }
 
@@ -149,6 +145,8 @@ struct alarmInputView: View {
     @State private var secondText = "01"
     @Binding var alarms: [Alarm]
     @State private var showAlarmList = false
+    @Binding var countingResults: [TimeInterval]
+
     
     var body: some View {
         ScrollView {
@@ -200,6 +198,19 @@ struct alarmInputView: View {
                 .sheet(isPresented: $showAlarmList){
                     AlarmListView(alarms: $alarms)
                 }
+                Button(action: {
+                    self.alarms = []
+                    self.countingResults = []
+                }) {
+                    Text("Reset")
+                        .font(.custom("Arial", size: 12))
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(Color.red)
+                        .cornerRadius(8)
+                }
+                .frame(width: .infinity)
+                .padding(.top, 20)
             }
         }
         .padding()
