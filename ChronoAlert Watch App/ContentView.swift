@@ -15,6 +15,8 @@ struct ContentView: View {
     @State private var alarmSecond = 0
     @State private var showAlert = false
     @State private var alertShow = false
+    @State private var startTime: Date?
+    @State private var coutingResult: TimeInterval = 0
     
     var body: some View {
         VStack(spacing: 0) {
@@ -45,7 +47,7 @@ struct ContentView: View {
                 }
                 
                 Button(action: {
-                    print("Button 2 Tapped")
+                    print("Counting Result: \(coutingResult) seconds")
                 }) {
                     Text("Get Data")
                         .font(.custom("Arial", size: 10))
@@ -66,8 +68,12 @@ struct ContentView: View {
             self.checkAlarm()
         }
         .alert(isPresented: $showAlert){
-            Alert(title: Text("Alarm"), message: Text("Waktu alarm telah tercapai!"), dismissButton: .default(Text("OK")){
-            })
+            Alert(title: Text("Alarm"), message: Text("Waktu alarm telah tercapai!"), primaryButton: .default(Text("OK")){
+                if let startTime = startTime {
+                    let endTime = Date()
+                    coutingResult = endTime.timeIntervalSince(startTime)
+                }
+            }, secondaryButton: .cancel())
         }
 
     }
@@ -86,6 +92,7 @@ struct ContentView: View {
         
         if currentHour == alarmHour && currentMinute == alarmMinute && currentSecond == alarmSecond {
             showAlert = true
+            startTime = Date()
         }
     }
 }
