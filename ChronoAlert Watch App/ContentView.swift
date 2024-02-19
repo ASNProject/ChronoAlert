@@ -16,7 +16,9 @@ struct ContentView: View {
     @State private var showAlert = false
     @State private var alertShow = false
     @State private var startTime: Date?
-    @State private var coutingResult: TimeInterval = 0
+    @State private var countingResult: TimeInterval = 0
+    
+    @State private var showCountingResults = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -46,8 +48,9 @@ struct ContentView: View {
                     alarmInputView(alarmHour: $alarmHour, alarmMinute: $alarmMinute, alarmSecond: $alarmSecond)
                 }
                 
+                
                 Button(action: {
-                    print("Counting Result: \(coutingResult) seconds")
+                    showCountingResults = true
                 }) {
                     Text("Get Data")
                         .font(.custom("Arial", size: 10))
@@ -57,6 +60,9 @@ struct ContentView: View {
                         .cornerRadius(8)
                 }
                 .frame(width: 100)
+                .sheet(isPresented: $showCountingResults){
+                    CountingResultsView(countingResult: countingResult)
+                }
             }
             ///Line Terakhir
         }
@@ -71,7 +77,7 @@ struct ContentView: View {
             Alert(title: Text("Alarm!"), message: Text("Waktu alarm telah tercapai!"), dismissButton: .default(Text("OK")){
                 if let startTime = startTime {
                     let endTime = Date()
-                    coutingResult = endTime.timeIntervalSince(startTime)
+                    countingResult = endTime.timeIntervalSince(startTime)
                 }
             })
         }
@@ -145,6 +151,17 @@ struct alarmInputView: View {
         }
         .padding()
         .buttonStyle(BorderlessButtonStyle())
+    }
+}
+
+struct CountingResultsView: View {
+    var countingResult: TimeInterval
+
+    var body: some View {
+        List {
+            Text("Alarm 1: \(Int(countingResult * 1000)) ms")
+        }
+        .navigationTitle("Results").font(.custom("Arial", size: 12))
     }
 }
 
