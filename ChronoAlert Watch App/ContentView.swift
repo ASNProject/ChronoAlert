@@ -7,16 +7,22 @@
 
 import SwiftUI
 
+struct Alarm: Identifiable {
+    var hour: Int
+    var minute: Int
+    var second: Int
+    var id = UUID()
+}
+
 struct ContentView: View {
     @State private var currentTime = Date()
     @State private var showingAlarmSheet = false
-    @State private var alarmHour = 0
-    @State private var alarmMinute = 0
-    @State private var alarmSecond = 0
+    @State private var alarms: [Alarm] = []
     @State private var showAlert = false
     @State private var alertShow = false
+    @State private var alertMessage = ""
     @State private var startTime: Date?
-    @State private var countingResult: TimeInterval = 0
+    @State private var countingResult: [TimeInterval] = []
     
     @State private var showCountingResults = false
     
@@ -45,7 +51,8 @@ struct ContentView: View {
                 }
                 .frame(width: 100)
                 .sheet(isPresented: $showingAlarmSheet){
-                    alarmInputView(alarmHour: $alarmHour, alarmMinute: $alarmMinute, alarmSecond: $alarmSecond)
+//                    alarmInputView(alarmHour: $alarmHour, alarmMinute: $alarmMinute, alarmSecond: $alarmSecond)
+                    alarmInputView(setAlarm: addAlarm, alarms: $alarms)
                 }
                 
                 
@@ -61,7 +68,7 @@ struct ContentView: View {
                 }
                 .frame(width: 100)
                 .sheet(isPresented: $showCountingResults){
-                    CountingResultsView(countingResult: countingResult)
+                    CountingResultsView(countingResults: countingResult)
                 }
             }
             ///Line Terakhir
@@ -74,11 +81,14 @@ struct ContentView: View {
             self.checkAlarm()
         }
         .alert(isPresented: $showAlert){
-            Alert(title: Text("Alarm!"), message: Text("Waktu alarm telah tercapai!"), dismissButton: .default(Text("OK")){
+            Alert(title: Text("Alarm!"), message: Text(alertMessage), dismissButton: .default(Text("OK")) {
                 if let startTime = startTime {
                     let endTime = Date()
-                    countingResult = endTime.timeIntervalSince(startTime)
+                    let timeDifference = endTime.timeIntervalSince(startTime)
+                    countingResult.append(timeDifference)
+                    self.startTime = nil
                 }
+                showAlert = false // Setelah tombol "OK" ditekan, tutup alert
             })
         }
 
@@ -90,80 +100,149 @@ struct ContentView: View {
         return formatter.string(from: currentTime)
     }
     
+    func addAlarm(hour: Int, minute: Int, second: Int) {
+        let newAlarm = Alarm(hour: hour, minute: minute, second: second)
+        alarms.append(newAlarm)
+    }
+    
     func checkAlarm() {
-        let calendar = Calendar.current
-        let currentHour = calendar.component(.hour, from: currentTime)
-        let currentMinute = calendar.component(.minute, from: currentTime)
-        let currentSecond = calendar.component(.second, from: currentTime)
+        for alarm in alarms {
+            let calendar = Calendar.current
+            let currentHour = calendar.component(.hour, from: currentTime)
+            let currentMinute = calendar.component(.minute, from: currentTime)
+            let currentSecond = calendar.component(.second, from: currentTime)
+            
+            if currentHour == alarm.hour && currentMinute == alarm.minute && currentSecond == alarm.second {
+                showAlert = true
+                alertMessage = "Alarm \(alarm.hour):\(alarm.minute):\(alarm.second) telah tercapai!"
+                startTime = Date() // Setel ulang startTime saat alarm muncul
+            }
+        }
         
-        if currentHour == alarmHour && currentMinute == alarmMinute && currentSecond == alarmSecond {
-            showAlert = true
-            startTime = Date()
+        if let startTime = startTime, showAlert == false {
+            let endTime = Date()
+            let calendar = Calendar.current
+            let secondsDifference = calendar.dateComponents([.second], from: startTime, to: endTime).second ?? 0
+
+            // Periksa apakah ada alarm yang harus dihitung
+            if countingResult.isEmpty || countingResult.last != 0 {
+                countingResult.append(0)
+            }
+
+            // Perbarui hasil perhitungan
+            countingResult[countingResult.count - 1] += Double(secondsDifference)
+
+            self.startTime = nil // Hentikan waktu saat tombol "OK" ditekan
         }
     }
+
+
 }
 
+
+
 struct alarmInputView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @Binding var alarmHour: Int
-    @Binding var alarmMinute: Int
-    @Binding var alarmSecond: Int
+    var setAlarm: (Int, Int, Int) -> Void
+    @State private var alarmHour = 0
+    @State private var alarmMinute = 0
+    @State private var alarmSecond = 0
     @State private var secondText = "01"
+    @Binding var alarms: [Alarm]
+    @State private var showAlarmList = false
     
     var body: some View {
-        VStack {
-            Text("Set Alarm")
-                .font(.custom("Arial", size: 14))
-                .padding()
-            
-            Picker(selection: $alarmHour, label: Text("Hour")){
-                ForEach(0..<24) { hour in
-                    Text("\(hour)")
-                }
-            }
-            .pickerStyle(WheelPickerStyle())
-            .labelsHidden()
-            .frame(width: 100)
-            
-            Picker(selection: $alarmMinute, label: Text("Minute")) {
-                ForEach(0..<60) { minute in
-                    Text("\(minute)")
-                }
-            }
-            .pickerStyle(WheelPickerStyle())
-            .labelsHidden()
-            .frame(width: 100)
-            
-            Button(action: {
-                if let second = Int(secondText){
-                    alarmSecond = second
-                }
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Save")
-                    .font(.custom("Arial", size: 12))
+        ScrollView {
+            VStack {
+                Text("Set Alarm")
+                    .font(.custom("Arial", size: 14))
                     .padding()
-                    .foregroundColor(.primary)
-                    .background(Color.blue)
-                    .cornerRadius(8)
+                
+                Picker(selection: $alarmHour, label: Text("Hour")){
+                    ForEach(0..<24) { hour in
+                        Text("\(hour)")
+                    }
+                }
+                .pickerStyle(WheelPickerStyle())
+                .labelsHidden()
+                .frame(width: 100, height: 20)
+                
+                Picker(selection: $alarmMinute, label: Text("Minute")) {
+                    ForEach(0..<60) { minute in
+                        Text("\(minute)")
+                    }
+                }
+                .pickerStyle(WheelPickerStyle())
+                .labelsHidden()
+                .frame(width: 100, height: 20)
+                
+                Button(action: {
+                    setAlarm(alarmHour, alarmMinute, alarmSecond)
+                }) {
+                    Text("Save")
+                        .font(.custom("Arial", size: 12))
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                .frame(width: .infinity)
+                Button(action: {
+                    showAlarmList = true
+                }) {
+                    Text("List alarm")
+                        .font(.custom("Arial", size: 12))
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(Color.blue)
+                        .cornerRadius(8)
+                }
+                .frame(width: .infinity)
+                .sheet(isPresented: $showAlarmList){
+                    AlarmListView(alarms: $alarms)
+                }
             }
-            .frame(width: .infinity)
         }
         .padding()
         .buttonStyle(BorderlessButtonStyle())
     }
+    
 }
 
+struct AlarmListView: View {
+    @Binding var alarms: [Alarm]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(Array(alarms.enumerated()), id: \.element.id) { index, alarm in
+                    Text("Alarm \(index + 1): \(alarm.hour):\(alarm.minute):\(alarm.second)")
+                }
+            }
+            .navigationTitle("Alarm List")
+            .font(.custom("Arial", size: 12))
+        }
+    }
+}
+
+
+
+
 struct CountingResultsView: View {
-    var countingResult: TimeInterval
+    var countingResults: [TimeInterval]
 
     var body: some View {
         List {
-            Text("Alarm 1: \(Int(countingResult * 1000)) ms")
+            ForEach(countingResults.indices, id: \.self) { index in
+                Text("Alarm \(index + 1): \(Int(countingResults[index] * 1000)) ms")
+            }
         }
-        .navigationTitle("Results").font(.custom("Arial", size: 12))
+        .navigationTitle("Results")
+        .font(.custom("Arial", size: 12))
     }
 }
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
