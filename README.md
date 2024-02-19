@@ -2,13 +2,13 @@
 
 ### Features
 - [x] Set single alarm
-- [ ] Set multiple alarm
+- [x] Set multiple alarm
 - [x] Show alert visual
 - [ ] Show alert audio
 - [ ] Show alert vibration
 - [x] Get timer data
-- [ ] Get multiple data
-- [ ] Multiple alert
+- [x] Get multiple data
+- [x] Multiple alert
 
 ### Specification
 - Apple Watch Series 5 (44mm)
