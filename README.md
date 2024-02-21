@@ -9,6 +9,7 @@
 - [x] Get timer data
 - [x] Get multiple data
 - [x] Multiple alert
+- [x] Reset all data
 
 ### Specification
 - Apple Watch Series 5 (44mm)
