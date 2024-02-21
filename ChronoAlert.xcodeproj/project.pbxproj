@@ -15,6 +15,7 @@
 		FD461EEA2B7F014100AA23CE /* ChronoAlert_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461EE92B7F014100AA23CE /* ChronoAlert_Watch_AppTests.swift */; };
 		FD461EF42B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461EF32B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift */; };
 		FD461EF62B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD461EF52B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift */; };
+		FDB942E92B86360100F384CC /* tone.wav in Resources */ = {isa = PBXBuildFile; fileRef = FDB942E82B86360100F384CC /* tone.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		FD461EEF2B7F014100AA23CE /* ChronoAlert Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChronoAlert Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD461EF32B7F014100AA23CE /* ChronoAlert_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoAlert_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		FD461EF52B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoAlert_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FDB942E82B86360100F384CC /* tone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tone.wav; path = ../../../../../Downloads/tone.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		FD461ED72B7F013E00AA23CE /* ChronoAlert Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				FDB942E72B8635CF00F384CC /* Sounds */,
 				FD461ED82B7F013E00AA23CE /* ChronoAlertApp.swift */,
 				FD461EDA2B7F013E00AA23CE /* ContentView.swift */,
 				FD461EDC2B7F014000AA23CE /* Assets.xcassets */,
@@ -149,6 +152,14 @@
 				FD461EF52B7F014100AA23CE /* ChronoAlert_Watch_AppUITestsLaunchTests.swift */,
 			);
 			path = "ChronoAlert Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		FDB942E72B8635CF00F384CC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FDB942E82B86360100F384CC /* tone.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB942E92B86360100F384CC /* tone.wav in Resources */,
 				FD461EE02B7F014000AA23CE /* Preview Assets.xcassets in Resources */,
 				FD461EDD2B7F014000AA23CE /* Assets.xcassets in Resources */,
 			);

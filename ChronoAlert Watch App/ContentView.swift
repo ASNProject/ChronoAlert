@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVFoundation
+import WatchKit
 
 struct Alarm: Identifiable {
     var hour: Int
@@ -25,6 +27,14 @@ struct ContentView: View {
     @State private var countingResult: [TimeInterval] = []
     
     @State private var showCountingResults = false
+    
+    // Set audio
+    @State private var audioPlayer: AVAudioPlayer?
+    @State private var isPlayingAudio = false
+    
+    //vibration
+    let haptic = WKHapticType.notification
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -85,10 +95,18 @@ struct ContentView: View {
                     let endTime = Date()
                     let timeDifference = endTime.timeIntervalSince(startTime)
                     countingResult.append(timeDifference)
+                    //Stop Audio
+//                    self.stopAudio()
+                    // Reset start time
                     self.startTime = nil
                 }
                 showAlert = false
             })
+        }
+        // Play audio
+        .onAppear {
+//            self.playAudio()
+            self.addHaptic()
         }
 
     }
@@ -104,6 +122,7 @@ struct ContentView: View {
         alarms.append(newAlarm)
     }
     
+    /// Check Alarm Visual
     func checkAlarm() {
         for alarm in alarms {
             let calendar = Calendar.current
@@ -131,6 +150,25 @@ struct ContentView: View {
 
             self.startTime = nil
         }
+    }
+    
+    func playAudio() {
+        guard let soundURL = Bundle.main.url(forResource: "tone", withExtension: "wav", subdirectory: "Sounds") else {
+            return
+        }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.play()
+        } catch {
+            print("Error playing audio: \(error.localizedDescription)")
+        }
+    }
+    func stopAudio() {
+        audioPlayer?.stop()
+    }
+    
+    func addHaptic(){
+        WKInterfaceDevice().play(haptic)
     }
 
 }
